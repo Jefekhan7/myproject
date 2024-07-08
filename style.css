@@ -1,0 +1,300 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+html,body {
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+   
+}
+
+:root {
+    --primary-color: 
+    --secondary-color:
+    --button-color:
+    --backround-color:
+}
+
+/* video styling  */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+audio {
+    /* z-index: -2; */
+    display: none;
+    
+}
+
+
+
+.main-container {
+    position: relative;
+    z-index: 1;
+    color: white;
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    
+}
+
+.countdown-timer {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    gap: 40px;
+    color: rgb(255, 255, 255);
+    margin-top: 150px;
+  
+}
+
+.timer {
+    /* height: 150px;
+    width: 150px; */
+    /* border: 2px solid rgb(62, 62, 62); */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    font-size: 20px;
+    color: rgb(228, 228, 228);
+    position: relative;
+}
+
+#audiocontrol {
+  margin-top: 100px;
+  padding: 10px;
+  color: white;
+  border: 1px solid white;
+  background-color: black;
+  box-shadow: 0px 0px 5px rgb(235, 235, 235);
+  cursor: pointer;
+
+  .fa-solid {
+     font-size: 10px;
+     margin-left: 2px;
+  }
+}
+#message {
+    margin-top: 10px;
+}
+#message::before {
+  content: " ";
+  animation: fadeIn ease-in-out  8s infinite;
+  -webkit-animation: fadeIn ease-in-out  8s infinite;
+}
+
+/* Animation for fading in */
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+    content: "A surprise from @Jefe--";
+  }
+
+  20% {
+    opacity: 0.5;
+    content: "A surprise from @Jefe--";
+  }
+  
+
+  40% {
+    opacity: 0;
+
+  }
+
+  60% {
+    opacity: 1;
+    content: "Celebrate you: coming soon"
+
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+    content: "Celebrate you: coming soon"
+
+  }
+
+  
+}
+
+.hide {
+  display: none;
+}
+
+
+/* pade media queries  */
+@media screen and (max-width: 480px) {
+  /* CSS rules for smartphones */
+  .countdown-timer {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    gap: 2px;
+    color: rgb(255, 255, 255);
+    margin-top: 150px;
+  
+}
+
+.timer {
+  /* height: 150px;
+  width: 150px; */
+  /* border: 2px solid rgb(62, 62, 62); */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 20px;
+  color: rgb(228, 228, 228);
+  position: relative;
+}
+
+#message {
+  margin-top: 20px;
+}
+
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* CSS rules for tablets */
+  .countdown-timer {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    gap: 40px;
+    color: rgb(255, 255, 255);
+    margin-top: 150px;
+  
+}
+
+.timer {
+  height: 100px;
+  width: 100px;
+  /* border: 2px solid rgb(62, 62, 62); */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 20px;
+  color: rgb(228, 228, 228);
+  position: relative;
+}
+#message {
+  margin-top: 15px;
+  font-size: 20px;
+}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  /* CSS rules for small laptops and desktops */
+  .countdown-timer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    color: rgb(255, 255, 255);
+    margin-top: 200px;
+  
+}
+
+.timer {
+  height: 100px;
+  width: 100px;
+  /* border: 2px solid rgb(62, 62, 62); */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 25px;
+  color: rgb(228, 228, 228);
+  position: relative;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+#message {
+  margin-top: 30px;
+  font-size: 20px;
+}
+}
+
+
+@media screen and (min-width: 1441px) {
+  /* CSS rules for large desktops and TVs */
+  .countdown-timer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    color: rgb(255, 255, 255);
+    margin-top: 200px;
+  
+}
+
+.timer {
+  height: 100px;
+  width: 100px;
+  /* border: 2px solid rgb(62, 62, 62); */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 30px;
+  color: rgb(228, 228, 228);
+  position: relative;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+#message {
+  margin-top: 30px;
+  font-size: 20px;
+}
+}
