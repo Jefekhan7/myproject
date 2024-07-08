@@ -60,8 +60,44 @@ audio {
     gap: 40px;
     color: rgb(255, 255, 255);
     margin-top: 150px;
-  
+    position: relative;
 }
+
+ .countdown-timer .Tensecond button {
+  text-align: center;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  display: none;
+  margin-left: 205px;
+  background-color: black;
+  border: 2px solid rgb(239, 239, 239);
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  animation: animee 4s ease-out infinite;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  -webkit-animation: animee 4s ease-out infinite;
+}
+ .countdown-timer .Tensecond button:hover {
+   opacity: 0.8;
+}
+
+@keyframes animee {
+  from {
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+
+}
+to {
+  box-shadow: 0px 0px 15px rgb(136, 169, 235);
+}
+} 
+
 
 .timer {
     /* height: 150px;
@@ -78,20 +114,7 @@ audio {
     position: relative;
 }
 
-#audiocontrol {
-  margin-top: 100px;
-  padding: 10px;
-  color: white;
-  border: 1px solid white;
-  background-color: black;
-  box-shadow: 0px 0px 5px rgb(235, 235, 235);
-  cursor: pointer;
 
-  .fa-solid {
-     font-size: 10px;
-     margin-left: 2px;
-  }
-}
 #message {
     margin-top: 10px;
 }
@@ -121,7 +144,7 @@ audio {
 
   60% {
     opacity: 1;
-    content: "Celebrate you: coming soon"
+    content: "Touch the screen to play"
 
   }
 
@@ -221,7 +244,8 @@ audio {
     gap: 80px;
     color: rgb(255, 255, 255);
     margin-top: 200px;
-  
+    
+   
 }
 
 .timer {
@@ -298,3 +322,5 @@ audio {
   font-size: 20px;
 }
 }
+
+

@@ -2,14 +2,13 @@
 window.onload = function () {
   Calculate();
 };
+
 // month/data/year
 // let setDate = "7/7/2024";
 // let setTime = "02:32:00 PM";
-let audiocontrol = document.getElementById("audiocontrol");
-audiocontrol.addEventListener('click', () => {
-  let bgAudio = document.getElementById("background-audio");
-  bgAudio.play();
-})
+
+let bgAudio = document.getElementById("background-audio");
+
 
 const Days = document.querySelector("#days");
 const Hours = document.querySelector("#hours");
@@ -18,14 +17,6 @@ const Seconds = document.querySelector("#seconds");
 
 var IntervalId;
 let video = document.querySelector("#background-video");
-
-
-function vidTime() {
-  video.currentTime = 112;
-  video.currentTime++;
-  let countAud = document.querySelector("#countaudio");
-  countAud.play();
-}
 
 function Calculate() {
   let currentDate = new Date();
@@ -43,14 +34,14 @@ function CalculateTime(endTime) {
 
     if (timeLeft >= 0 && timeLeft <= 11) {
       let div = document.querySelector(".main-container").classList.add("hide");
-      vidTime();
-
-    } else if (timeLeft <= 0) {
-      video.removeAttribute("loop");
-      video.removeAttribute("autoplay");
-      video.pause();
+      video.currentTime = 112;
+      video.currentTime++;
+      
     }
-
+    
+    if(timeLeft <= 0) {
+      let element = document.querySelector("#background-video").classList.add("hide");
+    }
     Days.innerHTML = Math.floor(timeLeft / (24 * 60 * 60));
     Hours.innerHTML = Math.floor((timeLeft / (60 * 60)) % 24);
     Minutes.innerHTML = Math.floor((timeLeft / 60) % 60);
@@ -63,4 +54,3 @@ function CalculateTime(endTime) {
     Seconds.innerHTML = 0;
   }
 }
-
