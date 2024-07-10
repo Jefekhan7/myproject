@@ -12,15 +12,14 @@
    </head>
 
 <body>
-  
       <div class="big-container"> 
       <!-- background video  -->
-    <video id="background-video"  muted loop >
-      <source src="page1stuffs/Candle flame being blown out 1 ｜ Free Stock Footage (CC).mp4" type="video/mp4">
-     </video>
       
-     <!-- //message and countdown-timer -->
-     <div class="main-container">
+      <!-- //message and countdown-timer -->
+      <div class="main-container">
+       <video id="background-video"  muted loop >
+         <source src="page1stuffs/Candle flame being blown out 1 ｜ Free Stock Footage (CC).mp4" type="video/mp4">
+        </video>
        <div class="countdown-timer">
          <div class="timer">
            <div id="days">00</div>
@@ -39,28 +38,29 @@
            <div id="para">Seconds</div>
          </div>
          
-         <div class="Tensecond">
-          <button id="count-down">Lets Celebrate &#128540;</button>
-         </div>
+         
 
        </div>
    
        <p id="message"></p>
          
        <!-- background audio  -->
-     <audio controls muted loop id="background-audio">
+     <audio controls loop id="background-audio">
       <source src="page1stuffs/HAPPY-BIRTHDAY-INSTRUMENTAL.ogg" type="audio/ogg">
     </audio>
       
-     <audio controls  id="countaudio">
-       <source src="page1stuffs/Countdown-Timer-10-seconds-with-womens-voice.ogg" type="audio/ogg">
-       <source src="page1stuffs/Countdown Timer - 10 seconds with womens voice.mp3" type="audio/mp3">
-     </audio>
-
     
-
-     </div>
     
+    
+  </div>
+  <div class="Tensecond">
+    <button class="hide" id="count-down">Lets Celebrate &#128540;</button>
+     <p class="hide" id="show-tensecond">0</p>
+  </div>
+  <audio controls  id="countaudio">
+    <source src="page1stuffs/Countdown-Timer-10-seconds-with-womens-voice.ogg" type="audio/ogg">
+    <source src="page1stuffs/Countdown Timer - 10 seconds with womens voice.mp3" type="audio/mp3">
+  </audio>
     </div>
 
 

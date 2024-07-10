@@ -2,17 +2,18 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
+    font-family: "Poppins" , "Sans-serif";
 }
 
 html,body {
     width: 100vw;
     overflow: hidden;
     display: flex;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-   
+    background-color: black;
 }
 
 :root {
@@ -39,6 +40,14 @@ audio {
     
 }
 
+.big-container {
+  background-color:  black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
 
 
 .main-container {
@@ -50,7 +59,7 @@ audio {
     justify-content: center;
     align-items: center;
     font-weight: 500;
-    
+   
 }
 
 .countdown-timer {
@@ -60,18 +69,15 @@ audio {
     gap: 40px;
     color: rgb(255, 255, 255);
     margin-top: 150px;
-    position: relative;
 }
 
- .countdown-timer .Tensecond button {
+ .big-container .Tensecond button {
   text-align: center;
   padding: 10px;
   color: rgb(255, 255, 255);
-  position: absolute;
-  bottom: -2px;
-  left: -2px;
-  display: none;
-  margin-left: 205px;
+  /* position: absolute; */
+  margin-top: 130px;
+  margin-left: 70px;
   background-color: black;
   border: 2px solid rgb(239, 239, 239);
   box-shadow: 0px 0px 10px rgb(255, 255, 255);
@@ -84,7 +90,7 @@ audio {
   cursor: pointer;
   -webkit-animation: animee 4s ease-out infinite;
 }
- .countdown-timer .Tensecond button:hover {
+ .big-container .Tensecond button:hover {
    opacity: 0.8;
 }
 
@@ -144,7 +150,7 @@ to {
 
   60% {
     opacity: 1;
-    content: "Touch the screen to play"
+    content: "Celebrate you: coming soon"
 
   }
 
@@ -324,3 +330,27 @@ to {
 }
 
 
+#show-tensecond {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  font-family: "Poppins" , "Sans-serif";
+  animation: scale 2s ease-in-out infinite;
+  -webkit-animation: scale 1s ease-in-out infinite;
+}
+
+@keyframes scale {
+ from {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+to {
+  transform: scale(2);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+}
+}
