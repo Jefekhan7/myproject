@@ -7,7 +7,6 @@ window.onload = function () {
 // let setDate = "7/7/2024";
 // let setTime = "02:32:00 PM";
 
-let bgAudio = document.getElementById("background-audio");
 
 const Days = document.querySelector("#days");
 const Hours = document.querySelector("#hours");
@@ -18,25 +17,21 @@ var IntervalId;
 let video = document.querySelector("#background-video");
 let audio = document.querySelector("#background-audio");
 
-let isAudioplaying = false;
-document.addEventListener('touchstart',() => {
- if(isAudioplaying) {
-  audio.pause();
- }else {
-   audio.play();
-}
+
+let isAudioPlaying = false;
+function toggleAudio() {
  
-isAudioplaying = !isAudioplaying;
-});
-document.addEventListener('click',() => {
- if(isAudioplaying) {
-  audio.pause();
- }else {
-   audio.play();
+  if (isAudioPlaying) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+  isAudioPlaying = !isAudioPlaying;
 }
- 
-isAudioplaying = !isAudioplaying;
-});
+
+document.addEventListener('touchstart', toggleAudio);
+document.addEventListener('click', toggleAudio);
+
 
 function Calculate() {
   let currentDate = new Date();
@@ -54,26 +49,10 @@ function CalculateTime(endTime) {
 
     if (timeLeft <= 11) {
       clearInterval(IntervalId);
-      document.removeEventListener('touchstart',() => {
-        if(isAudioplaying) {
-         audio.pause();
-        }else {
-          audio.play();
-       }
-        
-       isAudioplaying = !isAudioplaying;
-       });
-       document.removeEventListener('click',() => {
-        if(isAudioplaying) {
-         audio.pause();
-        }else {
-          audio.play();
-       }
-        
-       isAudioplaying = !isAudioplaying;
-       });
+      document.removeEventListener('touchstart', toggleAudio);
+      document.removeEventListener('click', toggleAudio);
       let div = document.querySelector(".main-container").classList.add("hide");
-      video.currentTime = 112;
+      video.currentTime = 109;
       video.currentTime++;
       //****** *
       var btn = document.getElementById('count-down');
@@ -95,10 +74,11 @@ function CalculateTime(endTime) {
             if (seconds > 0) {
                 setTimeout(tick, 1150); // Call tick again after 1 second
             } else {
-                console.log('Countdown complete!');
+               window.location.href = 'secondpage.html';
                 // Here you can perform any actions you want after countdown finishes
             }
         }
+
         tick(); // Start the countdown
       })
     }
