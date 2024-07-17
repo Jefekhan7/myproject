@@ -7,7 +7,7 @@
 body {
     margin: 0;
     background: #020202;
-    cursor: crosshair;
+    cursor: pointer;
   }
   canvas{display:block}
   h1 {
@@ -22,3 +22,4 @@ body {
     -webkit-user-select: none;
     user-select: none;
   }
+

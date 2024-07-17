@@ -1,12 +1,13 @@
 // countdown code
 window.onload = function () {
-  Calculate();
+  // Calculate();
 };
 
 // month/data/year
 // let setDate = "7/7/2024";
 // let setTime = "02:32:00 PM";
 
+const audiobutton = document.querySelector("#toggleaudio");
 
 const Days = document.querySelector("#days");
 const Hours = document.querySelector("#hours");
@@ -17,20 +18,27 @@ var IntervalId;
 let video = document.querySelector("#background-video");
 let audio = document.querySelector("#background-audio");
 
+audiobutton.addEventListener('touchstart', toggleAudio);
+audiobutton.addEventListener('click', toggleAudio);
 
 let isAudioPlaying = false;
 function toggleAudio() {
  
   if (isAudioPlaying) {
     audio.pause();
+    
+    document.querySelector(".fa-solid").classList.remove("fa-pause");
+    document.querySelector(".fa-solid").classList.add("fa-play");
   } else {
     audio.play();
+    document.querySelector(".fa-solid").classList.add("fa-pause");
+    document.querySelector(".fa-solid").classList.remove("fa-play");
+    
   }
   isAudioPlaying = !isAudioPlaying;
 }
 
-document.addEventListener('touchstart', toggleAudio);
-document.addEventListener('click', toggleAudio);
+
 
 
 function Calculate() {
@@ -49,8 +57,9 @@ function CalculateTime(endTime) {
 
     if (timeLeft <= 11) {
       clearInterval(IntervalId);
-      document.removeEventListener('touchstart', toggleAudio);
-      document.removeEventListener('click', toggleAudio);
+      audiobutton.removeEventListener('touchstart', toggleAudio);
+      audiobutton.removeEventListener('click', toggleAudio);
+      audio.pause();
       let div = document.querySelector(".main-container").classList.add("hide");
       video.currentTime = 109;
       video.currentTime++;
