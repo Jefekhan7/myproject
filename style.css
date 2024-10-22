@@ -167,12 +167,12 @@ to {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    content: "A surprise from @Jefe--";
+    content: "  your special day is almost here! ";
   }
 
   20% {
     opacity: 0.5;
-    content: "A surprise from @Jefe--";
+    content: " your special day is almost here! ";
   }
   
 
@@ -183,7 +183,7 @@ to {
 
   60% {
     opacity: 1;
-    content: "Celebrate you: coming soon"
+    content: "A small wish From @jefe"
 
   }
 
@@ -193,7 +193,7 @@ to {
 
   100% {
     opacity: 0;
-    content: "Celebrate you: coming soon"
+    content: "A small wish From @jefe"
 
   }
 

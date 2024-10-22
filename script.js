@@ -1,11 +1,11 @@
 // countdown code
 window.onload = function () {
-  // Calculate();
+  Calculate();
 };
 
 // month/data/year
-// let setDate = "7/7/2024";
-// let setTime = "02:32:00 PM";
+// let setDate = "10/23/2024";
+// let setTime = "12:00:00 AM";
 
 const audiobutton = document.querySelector("#toggleaudio");
 
@@ -15,7 +15,7 @@ const Minutes = document.querySelector("#minutes");
 const Seconds = document.querySelector("#seconds");
 
 var IntervalId;
-let video = document.querySelector("#background-video");
+
 let audio = document.querySelector("#background-audio");
 
 audiobutton.addEventListener('touchstart', toggleAudio);
@@ -42,6 +42,7 @@ function toggleAudio() {
 
 
 function Calculate() {
+  // ***
   let currentDate = new Date();
   const endTime = currentDate.setMinutes(currentDate.getMinutes() + 1);
   // const endTime = new Date(setDate + " " + setTime);
@@ -53,6 +54,15 @@ function CalculateTime(endTime) {
 
   const timeLeft = (endTime - currentTime) / 1000;
   if (endTime > currentTime) {
+
+    // ******* 
+    let video = document.querySelector("#background-video");
+  video.play();
+  let setvideotime = video.currentTime;
+  setvideotime =112;
+  console.log(setvideotime);
+
+  
     console.log(timeLeft);
 
     if (timeLeft <= 11) {
@@ -61,7 +71,10 @@ function CalculateTime(endTime) {
       audiobutton.removeEventListener('click', toggleAudio);
       audio.pause();
       let div = document.querySelector(".main-container").classList.add("hide");
-      video.currentTime = 109;
+      
+
+      // setvideotime =111;
+     
       video.currentTime++;
       //****** *
       var btn = document.getElementById('count-down');
@@ -93,9 +106,7 @@ function CalculateTime(endTime) {
     }
 
     if (timeLeft <= 0) {
-      let element = document
-        .querySelector("#background-video")
-        .classList.add("hide");
+      let element = document.querySelector("#background-video").classList.add("hide");
     }
     Days.innerHTML = Math.floor(timeLeft / (24 * 60 * 60));
     Hours.innerHTML = Math.floor((timeLeft / (60 * 60)) % 24);

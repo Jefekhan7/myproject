@@ -23,3 +23,25 @@ body {
     user-select: none;
   }
 
+
+  p {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2em;
+    font-weight: 900;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+#link {
+  margin-top: 50px;
+}
+#link a{
+  color: #fffcfc;
+  margin-top: 50px;
+  background-color: none;
+  font-size: 14px;
+  text-decoration: none;
+}
